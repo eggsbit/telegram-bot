@@ -21,6 +21,6 @@ tag-image:
 push-image:
 	docker push registry.gitlab.com/eggsbit/eggsbit-telegram-bot/telegram-bot:$(APP_IMAGE_TAG)
 
-.PHONY: start
+.PHONY: start-test
 start-test:
 	docker-compose -f deploy/docker-compose.test.yaml up -d
