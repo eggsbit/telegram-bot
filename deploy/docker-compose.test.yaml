@@ -1,0 +1,13 @@
+services:
+  telegram_bot:
+    image: registry.gitlab.com/eggsbit/eggsbit-telegram-bot/telegram-bot:${APP_IMAGE_TAG:-local}
+    env_file:
+      - ./.env
+    networks:
+      app_net:
+
+networks:
+  app_net:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "false"

@@ -1,0 +1,17 @@
+services:
+  telegram_bot:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    volumes:
+      - ./src:/app:delegated
+    env_file:
+      - ./.env
+    networks:
+      app_net:
+
+networks:
+  app_net:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "false"
